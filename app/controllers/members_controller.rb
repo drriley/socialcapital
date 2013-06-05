@@ -7,19 +7,7 @@ class MembersController < ApplicationController
   end
 
   def new
-    if params[:from].nil?
-      if params[:id].nil?
-        @member = Member.new
-      else
-        @member = member.find(params[:id])
-      end
-    else
-      @member = member.new
-      if params[:from] == "almost_out" 
-        @member.customer_id = params[:customer_id]
-        @member.item_id = params[:item_id]
-      end
-    end
+    
   end
 
   def edit
